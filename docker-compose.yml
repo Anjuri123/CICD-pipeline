@@ -1,0 +1,15 @@
+version: '2.0'
+services:
+  cicdpipeline:
+    build: 
+        context: C:\Users\anjurik\.jenkins\workspace\CICD-Pipeline
+        dockerfile: Dockerfile
+    ports:
+    - "5000:5000"
+    volumes:
+    - .:/code
+    - logvolume01:/var/log
+  cicdpipeline:
+    image: anjuri/devops-cicdpipeline.jar
+volumes:
+  logvolume01: {}
